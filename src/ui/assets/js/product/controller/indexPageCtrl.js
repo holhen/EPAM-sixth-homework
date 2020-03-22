@@ -28,9 +28,10 @@ var indexPageController = (function(ProductService, ProductSearchParameters) {
       searchParameters.searchTerm = event.target.value;
     });
 
-    categories.addEventListener("click", event =>
-      getProductsByCategory(event.target.textContent)
-    );
+    categories.addEventListener("click", event => {
+      event.preventDefault();
+      getProductsByCategory(event.target.textContent);
+    });
   }
 
   function searchProduct(searchParameters) {
